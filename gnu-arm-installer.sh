@@ -55,7 +55,7 @@ unpack_source()
 (
 cd $SRCDIR
 
-# ... And unpack the sources.
+# Unpack the sources.
 unpack_source $(basename $GCC_SRC)
 unpack_source $(basename $BINUTILS_SRC)
 unpack_source $(basename $NEWLIB_SRC)
@@ -71,7 +71,6 @@ export PATH=$PREFIX/bin:$PATH
 #
 (
 (
-# First we need to patch binutils, because makeinfo 4.11 fails the
 # autoconf check.
 cd $SRCDIR/$BINUTILS_DIR
 
@@ -84,6 +83,7 @@ cd $BUILDDIR/$BINUTILS_DIR
 $SRCDIR/$BINUTILS_DIR/configure --target=arm-elf --prefix=$PREFIX \
     --enable-interwork --enable-multilib --with-float=soft \
     && make all install
+
 ) || exit 1
 
 #
@@ -107,6 +107,7 @@ $SRCDIR/$GCC_DIR/configure --target=arm-elf --prefix=$PREFIX \
     --enable-languages="c,c++" --with-newlib \
     --with-headers=$SRCDIR/$NEWLIB_DIR/newlib/libc/include \
     && make all-gcc install-gcc
+
 ) || exit 1
 
 #
@@ -126,6 +127,7 @@ cd $BUILDDIR/$NEWLIB_DIR
 $SRCDIR/$NEWLIB_DIR/configure --target=arm-elf --prefix=$PREFIX \
     --enable-interwork --enable-multilib --with-float=soft \
     && make all install
+
 ) || exit 1
 
 #
@@ -135,6 +137,7 @@ $SRCDIR/$NEWLIB_DIR/configure --target=arm-elf --prefix=$PREFIX \
 cd $BUILDDIR/$GCC_DIR
 
 make all install
+
 ) || exit 1
 
 #
@@ -149,6 +152,7 @@ cd $BUILDDIR/$INSIGHT_DIR
 $SRCDIR/$INSIGHT_DIR/configure --target=arm-elf --prefix=$PREFIX \
     --enable-interwork --enable-multilib --with-float=soft \
     && make all install
+
 ) || exit 1
 
 
