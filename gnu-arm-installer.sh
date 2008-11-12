@@ -81,7 +81,7 @@ mkdir -p $BUILDDIR/$BINUTILS_DIR
 cd $BUILDDIR/$BINUTILS_DIR
 
 $SRCDIR/$BINUTILS_DIR/configure --target=arm-elf --prefix=$PREFIX \
-    --enable-interwork --enable-multilib --with-float=soft \
+    --enable-interwork --enable-multilib --with-float=soft --disable-werror \
     && make all install
 
 ) || exit 1
@@ -103,7 +103,7 @@ mkdir -p $BUILDDIR/$GCC_DIR
 cd $BUILDDIR/$GCC_DIR
 
 $SRCDIR/$GCC_DIR/configure --target=arm-elf --prefix=$PREFIX \
-    --enable-interwork --enable-multilib --with-float=soft \
+    --enable-interwork --enable-multilib --with-float=soft --disable-werror \
     --enable-languages="c,c++" --with-newlib \
     --with-headers=$SRCDIR/$NEWLIB_DIR/newlib/libc/include \
     && make all-gcc install-gcc
@@ -125,7 +125,7 @@ mkdir -p $BUILDDIR/$NEWLIB_DIR
 cd $BUILDDIR/$NEWLIB_DIR
 
 $SRCDIR/$NEWLIB_DIR/configure --target=arm-elf --prefix=$PREFIX \
-    --enable-interwork --enable-multilib --with-float=soft \
+    --enable-interwork --enable-multilib --with-float=soft --disable-werror \
     && make all install
 
 ) || exit 1
@@ -150,7 +150,7 @@ mkdir -p $BUILDDIR/$INSIGHT_DIR
 cd $BUILDDIR/$INSIGHT_DIR
 
 $SRCDIR/$INSIGHT_DIR/configure --target=arm-elf --prefix=$PREFIX \
-    --enable-interwork --enable-multilib --with-float=soft \
+    --enable-interwork --enable-multilib --with-float=soft --disable-werror \
     && make all install
 
 ) || exit 1
