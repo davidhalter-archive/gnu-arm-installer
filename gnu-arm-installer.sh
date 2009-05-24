@@ -81,7 +81,7 @@ mkdir -p $BUILDDIR/$BINUTILS_DIR
 cd $BUILDDIR/$BINUTILS_DIR
 
 $SRCDIR/$BINUTILS_DIR/configure --target=arm-elf --prefix=$PREFIX \
-    --enable-interwork --enable-multilib --with-float=soft --disable-werror \
+    --enable-interwork --enable-threads=posix --enable-multilib --with-float=soft --disable-werror \
     && make all install
 
 ) || exit 1
