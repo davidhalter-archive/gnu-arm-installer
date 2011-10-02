@@ -17,8 +17,8 @@ NEWLIB_SRC=newlib-1.16.0.tar.gz
 NEWLIB_VERSION=1.16.0
 NEWLIB_DIR=newlib-$NEWLIB_VERSION
 
-INSIGHT_SRC=insight-6.8.tar.bz2
-INSIGHT_VERSION=6.8
+INSIGHT_SRC=insight-6.8-1.tar.bz2
+INSIGHT_VERSION=6.8-1
 INSIGHT_DIR=insight-$INSIGHT_VERSION
 
 echo "I will build an arm-elf cross-compiler:
