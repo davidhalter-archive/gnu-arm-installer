@@ -1,5 +1,5 @@
 sudo aptitude install libmpfr-dev
-mkdir src/
+mkdir src/ install/ build/
 rm src/*
 
 wget http://ftp.gnu.org/gnu/binutils/binutils-2.19.1.tar.bz2 -O src/binutils-2.19.1.tar.bz2
