@@ -1,3 +1,4 @@
+sudo aptitude install libmpfr-dev
 mkdir src/
 rm src/*
 
